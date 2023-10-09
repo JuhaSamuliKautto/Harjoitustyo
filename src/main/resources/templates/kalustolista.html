@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <title>Kalustolista</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css" th:href="@{/css/bootstrap.css}" />
+    <link type="text/css" rel="stylesheet" href="/css/vaihtoehto.css" th:href="@{/css/vaihtoehto.css}" />
+</head>
+<body>
+	<div class="container">	
+		<div class="col-md-4">
+			<h1>Kalustolista</h1>
+		</div>
+		<div class="col-md-4">
+        	<h4>Role: <a th:text="${name}"></a></h4>
+		</div>
+		<div class="col-md-4" style="padding:20px 0">
+			<div class="btn-group d-flex align-items-center">
+				<td sec:authorize="hasAuthority('ADMIN')"><a class="btn btn-sm btn-danger" href="/lisaaajoneuvo">Lisää ajoneuvo</a></td>
+				<span class="mr-4"></span> 
+				<form th:action="@{/logout}" method="post">
+					<input type="submit" value="Kirjaudu ulos" class="btn btn-sm btn-danger"/>
+				</form>
+			</div>
+		</div>
+	
+    <table class="table table-striped">
+		<tr>
+		    <th>Rekisteritunnus</th>
+		    <th>Merkki</th>
+		    <th>Malli</th>
+		    <th>Vuosimalli</th>
+		    <th>Tyyppi</th>
+		    <th sec:authorize="hasAuthority('ADMIN')"> </th>
+		    <th></th>
+		</tr>
+		  
+    	<tr th:each = "ajoneuvo : ${ajoneuvot}">
+    		<td th:text="${ajoneuvo.rekisteritunnus}"></td>
+    		<td th:text="${ajoneuvo.merkki}"></td>
+    		<td th:text="${ajoneuvo.malli}"></td>
+    		<td th:text="${ajoneuvo.vuosi}"></td>
+    		<td th:text="${ajoneuvo.tyyppi.nimi}"></td> 	
+        	<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${ajoneuvo.id})}" class="btn btn-xs btn-danger">Poista</a></td>   
+        	<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/muokkaaajoneuvoa/{id}(id=${ajoneuvo.id})}" class="btn btn-xs btn-danger">Muokkaa</a></td>  
+    	</tr>
+    		
+    	
+     </table>
+           	
+</body>
+</html>

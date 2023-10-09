@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <title>Ajoneuvon muokkaus</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.css" th:href="@{/css/bootstrap.css}" />
+    <link type="text/css" rel="stylesheet" href="/css/vaihtoehto.css" th:href="@{/css/vaihtoehto.css}" />
+</head>
+<body>
+	<div class="container">	
+	<h1>Muokkaa ajoneuvoa</h1>
+	
+		<form th:action="@{/muokkaaajoneuvoa/{id}(id=${ajoneuvo.id})}" th:object="${ajoneuvo}" method="post">
+			<table>
+				<tr>
+					<td>Id: </td>
+					<td>
+            			<input type="text" id="id" th:field="*{id}" readonly="readonly" />
+            		</td>	
+            	</tr>
+            	
+            	<tr>
+					<td>Rekisteritunnus: </td>
+					<td>
+						<input type="text" id="rekisteritunnus" th:field="*{rekisteritunnus}" required>
+						<span th:if="${#fields.hasErrors('rekisteritunnus')}" th:errors="*{rekisteritunnus}" class="error">Error</span>
+					</td>
+				</tr>
+            	
+				<tr>
+					<td>Merkki: </td>
+					<td>
+						<input type="text" id="merkki" th:field="*{merkki}" required>
+						<span th:if="${#fields.hasErrors('merkki')}" th:errors="*{merkki}" class="error">Error</span>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Malli: </td>
+					<td>
+						<input type="text" id="malli" th:field="*{malli}" required>
+						<span th:if="${#fields.hasErrors('malli')}" th:errors="*{malli}" class="error">Error</span>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Vuosimalli: </td>
+					<td>
+						<input type="number" id="vuosi" th:field="*{vuosi}" required>
+						<span th:if="${#fields.hasErrors('vuosi')}" th:errors="*{vuosi}" class="error">Error</span>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Tyyppi: </td>
+					<td>
+						<select id="tyyppilista" th:field="*{tyyppi}" class="form-control">
+							<option th:each="tyyppi: ${tyypit}" th:value="${tyyppi.tyyppiid}" th:text="${tyyppi.nimi}"></option>
+						</select>
+						<span th:if="${#fields.hasErrors('tyyppi')}" th:errors="*{tyyppi}" class="error">Error</span>
+					</td>
+				</tr>
+				
+			</table>
+			<input type="submit" value="Tallenna"></input>
+		</form>
+	</div>
+</body>
+</html>
+

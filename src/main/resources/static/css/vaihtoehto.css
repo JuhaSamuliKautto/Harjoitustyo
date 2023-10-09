@@ -1,0 +1,65 @@
+@charset "UTF-8";
+table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;  
+  width: 90%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;  
+}
+
+table tbody tr:nth-child(even){background-color: #f2f2f2;}
+
+table tbody tr:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(128, 128, 128);
+  color: white;
+}
+
+.btn-danger {
+    background-color: rgb(128, 128, 255); /* Taustaväri */
+    border-color: darkblue; /* Reunan väri */
+    color: white; /* Tekstin väri */
+    font-size: 14px;
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.error {
+    color: red; /* Punainen teksti */
+    display: inline-block; /* Näytä viesti samalla rivillä */
+}
+.container {
+    width: 100%;
+}
+.poista{
+	color: rgb(255, 0, 0);
+	text-decoration: underline;
+	cursor: pointer;	
+}
+
+.oikealle{
+	text-align: right;	
+}
+
+#uusiAsiakas, #takaisin{
+	color: white;	
+	cursor: pointer;	
+}
+
+#linkki{
+	color: white;	
+	text-decoration: none;
+}
