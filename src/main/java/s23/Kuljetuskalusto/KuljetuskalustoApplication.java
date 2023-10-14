@@ -20,12 +20,13 @@ import s23.Kuljetuskalusto.domain.TyyppiRepository;
 @SpringBootApplication
 public class KuljetuskalustoApplication {
 
-	private static final Logger log = LoggerFactory.getLogger(KuljetuskalustoApplication.class);
+	//private static final Logger log = LoggerFactory.getLogger(KuljetuskalustoApplication.class);
 	
 	public static void main(String[] args) {
 		SpringApplication.run(KuljetuskalustoApplication.class, args);
 	}
 	
+	/*
 	@Bean
     public CommandLineRunner ajoneuvoDemo(AjoneuvoRepository arepository, TyyppiRepository trepository, AppUserRepository urepository) {
         return (args) -> {
@@ -60,7 +61,7 @@ public class KuljetuskalustoApplication {
         
     };
         
-    } 
+    } */
 }
 
 

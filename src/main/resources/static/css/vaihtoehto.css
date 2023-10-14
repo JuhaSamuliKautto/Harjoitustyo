@@ -22,6 +22,12 @@ table th {
   color: white;
 }
 
+body {
+    background-image: url('C:\Users\juhak\Back end\Kuljetuskalusto\Taustakuva.jpg'); /* Korvaa '/path/to/your/image.jpg' todellisella polulla kuvaasi */
+    background-size: cover; /* Säädä kuvan koko näytön kokoiseksi */
+}
+
+
 .btn-danger {
     background-color: rgb(128, 128, 255); /* Taustaväri */
     border-color: darkblue; /* Reunan väri */

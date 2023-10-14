@@ -23,7 +23,7 @@ public class Ajoneuvo {
 	
 	// @GeneratedValue-annotaatio: Tämä annotaatio määrittelee, että id-kenttä generoidaan automaattisesti tietokannassa.
 		// GenerationType.AUTO tarkoittaa, että tietokantajärjestelmä valitsee automaattisesti, miten tunnisteet generoidaan.
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 
 	
@@ -48,7 +48,7 @@ public class Ajoneuvo {
     @ManyToOne
     
     // @JoinColumn-annotaatio: Tämä annotaatio määrittelee liittämiskentän (tyyppi) tietokantataulussa.
-    @JoinColumn(name = "tyyppiid")
+    @JoinColumn(name = "tyyppi_id")
     
 	public Tyyppi tyyppi;
 

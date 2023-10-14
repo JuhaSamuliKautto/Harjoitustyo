@@ -20,5 +20,6 @@ public interface AjoneuvoRepository extends CrudRepository<Ajoneuvo, Long> {
 		// Metodi mahdollistaa ajoneuvojen hakemisen tietokannasta rekisteritunnuksen perusteella.
 	List<Ajoneuvo> findByRekisteritunnus(@Param("rekisteritunnus") String Rekisteritunnus);
 	List<Ajoneuvo> findByMerkki(@Param("merkki") String Merkki);
+	List<Ajoneuvo> findByMalli(@Param("malli") String Malli);
 	
 }

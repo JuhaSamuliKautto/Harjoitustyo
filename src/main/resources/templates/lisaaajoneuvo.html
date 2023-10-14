@@ -45,7 +45,7 @@
 					<td>Tyyppi: </td>
 					<td>
 						<select id="tyyppilista" th:field="*{tyyppi}" class="form-control">
-							<option th:each="tyyppi: ${tyypit}" th:value="${tyyppi.tyyppiid}" th:text="${tyyppi.nimi}"></option>
+							<option th:each="tyyppi: ${tyypit}" th:value="${tyyppi.id}" th:text="${tyyppi.nimi}"></option>
 						</select>
 						<span th:if="${#fields.hasErrors('tyyppi')}" th:errors="*{tyyppi}" class="error">Error</span>
 					</td>

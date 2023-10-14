@@ -18,8 +18,8 @@ public class Tyyppi {
 	
 	// @GeneratedValue-annotaatio: Tämä annotaatio määrittelee, että id-kenttä generoidaan automaattisesti tietokannassa.
 		// GenerationType.AUTO tarkoittaa, että tietokantajärjestelmä valitsee automaattisesti, miten tunnisteet generoidaan.
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long tyyppiid;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
 	private String nimi;
 
 	@JsonIgnore
@@ -33,12 +33,12 @@ public class Tyyppi {
 		this.nimi = nimi;
 	}
 
-	public long getTyyppiid() {
-		return tyyppiid;
+	public long getId() {
+		return id;
 	}
 
-	public void setTyyppiid(long tyyppiid) {
-		this.tyyppiid = tyyppiid;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getNimi() {
@@ -59,7 +59,7 @@ public class Tyyppi {
 
 	@Override
 	public String toString() {
-		return "Tyyppi [tyyppiid=" + tyyppiid + ", nimi=" + nimi + "]";
+		return "Tyyppi [id=" + id + ", nimi=" + nimi + "]";
 	}
 
 }
